@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nuevo anuncio</title>
+</head>
+<body>
+<p>Hola,</p>
+<p>El instructor <strong th:text="${instructorName} + ' ' + ${instructorLastname}"></strong> ha publicado un nuevo anuncio en el curso <strong th:text="${courseTitle}"></strong>.</p>
+<h3 th:text="${announcementTitle}"></h3>
+<p th:text="${announcementMessage}"></p>
+<br>
+<p>Por favor, accede a la plataforma para más detalles.</p>
+</body>
+</html>

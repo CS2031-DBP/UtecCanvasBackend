@@ -1,0 +1,1211 @@
+{
+	"info": {
+		"_postman_id": "0b1d6829-8623-4717-8166-f9cf6a9f4f1e",
+		"name": "UTEC++",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33955121",
+		"_collection_link": "https://booknest-8467.postman.co/workspace/Proyecto-UTEC%252B%252B~d26321dc-1a93-4685-bdd6-9a5f3b3dc9d1/collection/33955121-0b1d6829-8623-4717-8166-f9cf6a9f4f1e?action=share&source=collection_link&creator=33955121"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login as an Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"santiago.cama@utec.edu.pe\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Santiago\",\r\n    \"lastname\": \"Cama\",\r\n    \"email\": \"santiago.cama@utec.edu.pe\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login as an Student",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"brenda.quispe@utec.edu.pe\",\r\n    \"password\":\"Utec@5692\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login as an Instructor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"bojeda@utec.edu.pe\",\r\n    \"password\":\"Utec123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwiZW1haWwiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQ4Mzk3ODY2LCJleHAiOjE3NDg0ODQyNjZ9.hFwKicg_YNU0QIRNnN3kSYFHEnL2vIJq6OAj9GUHM7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"C1V\",\r\n    \"description\": \"Calculo de una variable, curso de primer ciclo para todas las carreras\",\r\n    \"section\": \"1\",\r\n    \"category\": \"teoria\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Course By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwiZW1haWwiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQ4Mjk0ODU0LCJleHAiOjE3NDgzODEyNTR9.-lKhvhi3DRZXXeJmxKhFrPHSvuKgaLtZirjDDE9v5pw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/course/getById/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								"getById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign instructor to course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwiZW1haWwiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQ4Mzk3ODY2LCJleHAiOjE3NDg0ODQyNjZ9.hFwKicg_YNU0QIRNnN3kSYFHEnL2vIJq6OAj9GUHM7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/course/instructor/mnoel@utec.edu.pe/courseId/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								"instructor",
+								"mnoel@utec.edu.pe",
+								"courseId",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lesson",
+			"item": [
+				{
+					"name": "Lesson",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtbm9lbEB1dGVjLmVkdS5wZSIsImVtYWlsIjoibW5vZWxAdXRlYy5lZHUucGUiLCJyb2xlIjoiSU5TVFJVQ1RPUiIsImlhdCI6MTc0ODM5ODY3NiwiZXhwIjoxNzQ4NDg1MDc2fQ.kD1etAM4bp2-ks5oanJtWd-rc6OR0Quntn4qa2Zeybo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Introduccion a DBP\",\r\n    \"week\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/lesson/courseId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lesson",
+								"courseId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lesson by Ttitle",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtbm9lbEB1dGVjLmVkdS5wZSIsImVtYWlsIjoibW5vZWxAdXRlYy5lZHUucGUiLCJyb2xlIjoiSU5TVFJVQ1RPUiIsImlhdCI6MTc0ODQwOTQxNywiZXhwIjoxNzQ4NDk1ODE3fQ.DvRVDvRr7viQD5u8swNhafduUEpQwEDGaiPg8uVGCUc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/lesson/courseId/1/title/Introduccion a DBP",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lesson",
+								"courseId",
+								"1",
+								"title",
+								"Introduccion a DBP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lesson by Week",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtbm9lbEB1dGVjLmVkdS5wZSIsImVtYWlsIjoibW5vZWxAdXRlYy5lZHUucGUiLCJyb2xlIjoiSU5TVFJVQ1RPUiIsImlhdCI6MTc0ODQwOTQxNywiZXhwIjoxNzQ4NDk1ODE3fQ.DvRVDvRr7viQD5u8swNhafduUEpQwEDGaiPg8uVGCUc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/lesson/courseId/1/getByWeek/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lesson",
+								"courseId",
+								"1",
+								"getByWeek",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lesson",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Introduccion\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/lesson/lessonId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lesson",
+								"lessonId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lesson",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtbm9lbEB1dGVjLmVkdS5wZSIsImVtYWlsIjoibW5vZWxAdXRlYy5lZHUucGUiLCJyb2xlIjoiSU5TVFJVQ1RPUiIsImlhdCI6MTc0ODQwOTQxNywiZXhwIjoxNzQ4NDk1ODE3fQ.DvRVDvRr7viQD5u8swNhafduUEpQwEDGaiPg8uVGCUc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/lesson/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lesson",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Material",
+			"item": [
+				{
+					"name": "Material",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtbm9lbEB1dGVjLmVkdS5wZSIsImVtYWlsIjoibW5vZWxAdXRlYy5lZHUucGUiLCJyb2xlIjoiSU5TVFJVQ1RPUiIsImlhdCI6MTc0ODQxNDM0NCwiZXhwIjoxNzQ4NTAwNzQ0fQ.8lsW94TpTSV6ttyLy8sZuUQNyflGh7phBU3wJ4SefyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Plataforma Computacional\",\r\n    \"type\": \"PDF\",\r\n    \"url\": \"sem1.pdf\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/material/courseId/1/week/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"material",
+								"courseId",
+								"1",
+								"week",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "Quiz",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtbm9lbEB1dGVjLmVkdS5wZSIsImVtYWlsIjoibW5vZWxAdXRlYy5lZHUucGUiLCJyb2xlIjoiSU5TVFJVQ1RPUiIsImlhdCI6MTc0ODQyNDIzMiwiZXhwIjoxNzQ4NTEwNjMyfQ.MJ3SyXfEA6XK5rUBcKsQOksZOGkNSZiOJ6jZmon0riw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Quiz de API REST y Arquitectura\",\r\n    \"maxScore\": 10.0,\r\n    \"instructions\": \"Contesta todas las preguntas. Las preguntas cerradas se califican automáticamente.\",\r\n    \"dueDate\": \"2025-06-30T23:59:59\",\r\n    \"questions\": [\r\n    {\r\n      \"question\": \"¿Qué método HTTP se usa para obtener datos de un recurso?\",\r\n      \"correctAnswer\": \"GET\",\r\n      \"options\": [\"GET\", \"POST\", \"PUT\", \"DELETE\"],\r\n      \"questionType\": \"MULTIPLE_CHOICE\",\r\n      \"isOpen\": false\r\n    },\r\n    {\r\n      \"question\": \"Explica brevemente qué es la arquitectura hexagonal.\",\r\n      \"correctAnswer\": null,\r\n      \"options\": [],\r\n      \"questionType\": \"OPEN\",\r\n      \"isOpen\": true\r\n    },\r\n    {\r\n      \"question\": \"¿Cuál es el código HTTP que indica que una petición fue exitosa?\",\r\n      \"correctAnswer\": \"200\",\r\n      \"options\": [\"404\", \"500\", \"200\", \"301\"],\r\n      \"questionType\": \"MULTIPLE_CHOICE\",\r\n      \"isOpen\": false\r\n    },\r\n    {\r\n      \"question\": \"Menciona dos ventajas de usar API REST.\",\r\n      \"correctAnswer\": null,\r\n      \"options\": [],\r\n      \"questionType\": \"OPEN\",\r\n      \"isOpen\": true\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/quiz/courseId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz",
+								"courseId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Quiz",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtbm9lbEB1dGVjLmVkdS5wZSIsImVtYWlsIjoibW5vZWxAdXRlYy5lZHUucGUiLCJyb2xlIjoiSU5TVFJVQ1RPUiIsImlhdCI6MTc0ODQyNTI1MCwiZXhwIjoxNzQ4NTExNjUwfQ.C9qACQK63b2PlHTDKn_IP9wJ8yMIpprTnBm8LkJiI00",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/quiz/title/Quiz de API REST y Arquitectura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz",
+								"title",
+								"Quiz de API REST y Arquitectura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Quiz By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtbm9lbEB1dGVjLmVkdS5wZSIsImVtYWlsIjoibW5vZWxAdXRlYy5lZHUucGUiLCJyb2xlIjoiSU5TVFJVQ1RPUiIsImlhdCI6MTc0ODQyNjA3OCwiZXhwIjoxNzQ4NTEyNDc4fQ.2towRymYpk_AIZwrtkmP2B1N0U386_a8YdCeGWoNpEM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Quiz de API REST y Arquitectura\",\r\n    \"maxScore\": 10.0,\r\n    \"instructions\": \"Contesta todas las preguntas. Las preguntas cerradas se califican automáticamente.\",\r\n    \"dueDate\": \"2025-06-30T23:59:59\",\r\n    \"questions\": [\r\n    {\r\n      \"question\": \"¿Qué método HTTP se usa para obtener datos de un recurso?\",\r\n      \"correctAnswer\": \"GET\",\r\n      \"options\": [\"GET\", \"POST\", \"PUT\", \"DELETE\"],\r\n      \"questionType\": \"MULTIPLE_CHOICE\",\r\n      \"isOpen\": false\r\n    },\r\n    {\r\n      \"question\": \"Explica brevemente qué es la arquitectura hexagonal.\",\r\n      \"correctAnswer\": null,\r\n      \"options\": [],\r\n      \"questionType\": \"OPEN\",\r\n      \"isOpen\": true\r\n    },\r\n    {\r\n      \"question\": \"¿Cuál es el código HTTP que indica que una petición fue exitosa?\",\r\n      \"correctAnswer\": \"200\",\r\n      \"options\": [\"404\", \"500\", \"200\", \"301\"],\r\n      \"questionType\": \"MULTIPLE_CHOICE\",\r\n      \"isOpen\": false\r\n    },\r\n    {\r\n      \"question\": \"Menciona dos ventajas de usar API REST.\",\r\n      \"correctAnswer\": null,\r\n      \"options\": [],\r\n      \"questionType\": \"OPEN\",\r\n      \"isOpen\": true\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/quiz/delete/id/402",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz",
+								"delete",
+								"id",
+								"402"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit quiz",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJicmVuZGEucXVpc3BlQHV0ZWMuZWR1LnBlIiwiZW1haWwiOiJicmVuZGEucXVpc3BlQHV0ZWMuZWR1LnBlIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3NDg0MjU4ODEsImV4cCI6MTc0ODUxMjI4MX0.Gpw8hdlwEx9_AQPXkZksIFYJ4eN3JGVaRXswMxgQFBM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quizId\": 402,\r\n  \"answers\": [\r\n    {\r\n      \"questionId\": 402,\r\n      \"selectedOption\": \"GET\"\r\n    },\r\n    {\r\n      \"questionId\": 403,\r\n      \"openAnswer\": \"La arquitectura hexagonal separa la lógica del negocio de los mecanismos externos como la base de datos o la interfaz, permitiendo un diseño más modular y fácil de probar.\"\r\n    },\r\n    {\r\n      \"questionId\": 404,\r\n      \"selectedOption\": \"200\"\r\n    },\r\n    {\r\n      \"questionId\": 405,\r\n      \"openAnswer\": \"Escalabilidad y facilidad de integración con múltiples clientes como móviles o frontends web.\"\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/quiz/submit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quiz",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assignment",
+			"item": [
+				{
+					"name": "Assignment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtbm9lbEB1dGVjLmVkdS5wZSIsImVtYWlsIjoibW5vZWxAdXRlYy5lZHUucGUiLCJyb2xlIjoiSU5TVFJVQ1RPUiIsImlhdCI6MTc0ODQxNzIyMCwiZXhwIjoxNzQ4NTAzNjIwfQ.ngBFfbIqtVW-xwgC-c_1PEajIZOJ5bgkQwVg4E4Ismg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Eval Continua 1\",\r\n    \"material\": \"Continu1.pdf\",\r\n    \"uploadRequired\": true,\r\n    \"maxScore\": 20.0,\r\n    \"instructions\": \"Subir un pdf con la resolucion de los problemas\",\r\n    \"dueDate\":\"2025-06-03T12:30:00\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/assignment/courseId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"assignment",
+								"courseId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assignment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Homeword1.pdf\",\r\n    \"uploadRequired\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/assignmentId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"assignmentId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assignment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteAssignment/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteAssignment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assignment by Title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/getByTitle/Homeword1.pdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getByTitle",
+								"Homeword1.pdf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "Quiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question\": \"Que es una API?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/question/quizId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"quizId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Question",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question\": \"Que significa API?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/question/questionId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"questionId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Question",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/question/questionId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"questionId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwiZW1haWwiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQ4NDQyODczLCJleHAiOjE3NDg1MjkyNzN9.XtV8SI97IIFo1ItBrB208LTthjh2Cpsk3ZAM-JeHHNQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Cristiano\",\r\n    \"lastname\": \"Ronaldo\",\r\n    \"email\": \"saalcaar21@gmail.com\",\r\n    \"password\": \"Utec@5692\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwiZW1haWwiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQ2OTQ5MDQ2LCJleHAiOjE3NDcwMzU0NDZ9.Lcjzvou80Vr_W8IM2dtkLnQ3VTbcUOvjKrU1DkaYeck",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/student/getById/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"getById",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get my info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJicmVuZGEucXVpc3BlQHV0ZWMuZWR1LnBlIiwiZW1haWwiOiJicmVuZGEucXVpc3BlQHV0ZWMuZWR1LnBlIiwicm9sZSI6IlNUVURFTlQiLCJpYXQiOjE3NDY5NDkzNTgsImV4cCI6MTc0NzAzNTc1OH0.nzwcjT86e66PrEOsfXukFirSwoU1h16nPYsvmG9E9Cw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/student/getMyOwnInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"getMyOwnInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Studnts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwiZW1haWwiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQ4Mzk3NTA2LCJleHAiOjE3NDg0ODM5MDZ9.TzMFtoRI6lB40B7gdcVhSFfF9Sia5v0V4h1a3GPAk4o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/student/getAllStudents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"getAllStudents"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Instructor",
+			"item": [
+				{
+					"name": "Instructor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwiZW1haWwiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQ4Mzk3ODY2LCJleHAiOjE3NDg0ODQyNjZ9.hFwKicg_YNU0QIRNnN3kSYFHEnL2vIJq6OAj9GUHM7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mateo\",\r\n    \"lastname\": \"Noel\",\r\n    \"email\": \"mnoel@utec.edu.pe\",\r\n    \"password\": \"Utec123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/instructor/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"instructor",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Instructor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwiZW1haWwiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQ4Mzk3NTA2LCJleHAiOjE3NDg0ODM5MDZ9.TzMFtoRI6lB40B7gdcVhSFfF9Sia5v0V4h1a3GPAk4o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/instructor/delete/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"instructor",
+								"delete",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwiZW1haWwiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQ4Mzk3NTA2LCJleHAiOjE3NDg0ODM5MDZ9.TzMFtoRI6lB40B7gdcVhSFfF9Sia5v0V4h1a3GPAk4o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Enrollment",
+			"item": [
+				{
+					"name": "Enrollment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwiZW1haWwiOiJzYW50aWFnby5jYW1hQHV0ZWMuZWR1LnBlIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQ4Mzk3ODY2LCJleHAiOjE3NDg0ODQyNjZ9.hFwKicg_YNU0QIRNnN3kSYFHEnL2vIJq6OAj9GUHM7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/enrollment/courseId/2/studentEmail/saalcaar21@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"enrollment",
+								"courseId",
+								"2",
+								"studentEmail",
+								"saalcaar21@gmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Announcement",
+			"item": [
+				{
+					"name": "Announcement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtbm9lbEB1dGVjLmVkdS5wZSIsImVtYWlsIjoibW5vZWxAdXRlYy5lZHUucGUiLCJyb2xlIjoiSU5TVFJVQ1RPUiIsImlhdCI6MTc0ODQ0Mjc2OSwiZXhwIjoxNzQ4NTI5MTY5fQ.aorG9a7moM8JueLKNBjlNv2BDa030MnMe38awiiHxJU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Recordatorio de Evaluación\",\r\n  \"message\": \"Hola a todos, este viernes tendremos una evaluación sobre el tema de Herencia en Java. ¡Estudien bien!\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/announcement/course/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"announcement",
+								"course",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Announcement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtbm9lbEB1dGVjLmVkdS5wZSIsImVtYWlsIjoibW5vZWxAdXRlYy5lZHUucGUiLCJyb2xlIjoiSU5TVFJVQ1RPUiIsImlhdCI6MTc0ODQ0Mjk5NywiZXhwIjoxNzQ4NTI5Mzk3fQ.Xe5lysv4tg2MCewXPUJgZqT_h0m5c9mZMVJOV6Q1-mU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Cancelacion de clases del deia Viernes\",\r\n    \"message\":\"Muchacos me da pereza ir el viernes, la siguiente semana recuperamos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/announcement/course/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"announcement",
+								"course",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido a UTEC++</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f6fa;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0057a0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>¡Bienvenido a UTEC++!</h2>
+    <p>Hola <strong th:text="${name} + ' ' + ${lastname}">Nombre Apellido</strong>,</p>
+    <p>Tu cuenta ha sido registrada exitosamente con los siguientes datos:</p>
+
+    <ul>
+        <li><strong>Email:</strong> <span th:text="${email}">correo@ejemplo.com</span></li>
+        <li><strong>Contraseña:</strong> <span th:text="${password}">********</span></li>
+    </ul>
+
+    <p>Te recomendamos cambiar tu contraseña luego del primer ingreso por seguridad.</p>
+    <p>¡Nos alegra tenerte como parte de nuestra comunidad!</p>
+
+    <p>Saludos,<br>
+        El equipo de UTEC++</p>
+</div>
+</body>
+</html>

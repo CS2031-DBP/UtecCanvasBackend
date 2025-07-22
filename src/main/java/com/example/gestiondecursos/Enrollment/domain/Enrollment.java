@@ -23,6 +23,9 @@ public class Enrollment {
 
     private LocalDateTime enrolled;
 
+    // Color personalizado del usuario para este curso
+    private String color;
+
 //    private Integer maxScore;
 
     @ManyToOne

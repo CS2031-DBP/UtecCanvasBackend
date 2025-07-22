@@ -9,6 +9,7 @@ public class EnrollmentResponseDTO {
     private LocalDateTime enrolled;
     private CourseInfoDTO course;
     private StudentInfoDTO student;
+    private String color;
     
     @Data
     public static class CourseInfoDTO {

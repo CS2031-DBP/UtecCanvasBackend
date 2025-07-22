@@ -22,6 +22,7 @@ import com.example.gestiondecursos.Enrollment.dto.EnrollmentResponseDTO;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -123,5 +124,51 @@ public class EnrollmentService {
             
             return dto;
         }).collect(Collectors.toList());
+    }
+
+    public List<EnrollmentResponseDTO> getEnrollmentsByUserEmail(String email) {
+        List<Enrollment> enrollments = enrollmentRepository.findAll();
+        return enrollments.stream()
+                .filter(e -> e.getStudent().getEmail().equals(email))
+                .map(this::mapToDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public void updateEnrollmentColor(Long enrollmentId, String color, String userEmail) {
+        Enrollment enrollment = enrollmentRepository.findById(enrollmentId)
+                .orElseThrow(() -> new RuntimeException("Enrollment not found"));
+        // Validar que el usuario sea el dueño de la inscripción (student)
+        if (!enrollment.getStudent().getEmail().equals(userEmail)) {
+            throw new RuntimeException("No tienes permiso para modificar este curso");
+        }
+        enrollment.setColor(color);
+        enrollmentRepository.save(enrollment);
+    }
+
+    private EnrollmentResponseDTO mapToDTO(Enrollment enrollment) {
+        EnrollmentResponseDTO dto = new EnrollmentResponseDTO();
+        dto.setId(enrollment.getId());
+        dto.setEnrolled(enrollment.getEnrolled());
+        dto.setColor(enrollment.getColor());
+
+        // Mapear información del curso
+        EnrollmentResponseDTO.CourseInfoDTO courseInfo = new EnrollmentResponseDTO.CourseInfoDTO();
+        courseInfo.setId(enrollment.getCourse().getId());
+        courseInfo.setTitle(enrollment.getCourse().getTitle());
+        courseInfo.setDescription(enrollment.getCourse().getDescription());
+        courseInfo.setSection(enrollment.getCourse().getSection());
+        courseInfo.setCategory(enrollment.getCourse().getCategory());
+        dto.setCourse(courseInfo);
+
+        // Mapear información del estudiante
+        EnrollmentResponseDTO.StudentInfoDTO studentInfo = new EnrollmentResponseDTO.StudentInfoDTO();
+        studentInfo.setId(enrollment.getStudent().getId());
+        studentInfo.setName(enrollment.getStudent().getName());
+        studentInfo.setLastname(enrollment.getStudent().getLastname());
+        studentInfo.setEmail(enrollment.getStudent().getEmail());
+        dto.setStudent(studentInfo);
+
+        return dto;
     }
 }

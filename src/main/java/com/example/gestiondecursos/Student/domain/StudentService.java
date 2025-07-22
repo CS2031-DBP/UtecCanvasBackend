@@ -129,12 +129,6 @@ public class StudentService {
 
     public StudentResponseDTO updateStudent(String email, StudentRequestDTO student){ //Para Admins
         Student updatedStudent = studentRepository.findByEmail(email).orElseThrow(() -> new ResourceNotFound("Student not found"));
-//        if(student.getDescription() != null){
-//            updatedStudent.setDescription(student.getDescription());
-//        }
-//        if(student.getProfilePhoto() != null){
-//            updatedStudent.setProfilePhoto(student.getProfilePhoto());
-//        }
         if(student.getName() != null){
             updatedStudent.setName(student.getName());
         }
